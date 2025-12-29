@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
-import { Film, Search } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Film, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const Header = () => {
+  const location = useLocation();
+  const isAuthPage = location.pathname === "/login" || location.pathname === "/signup";
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -43,11 +46,23 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
-              <Search className="w-5 h-5" />
-            </Button>
-          </div>
+          {!isAuthPage && (
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
+                <Search className="w-5 h-5" />
+              </Button>
+              <Link to="/login">
+                <Button variant="outline" size="sm">
+                  Sign In
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button variant="hero" size="sm">
+                  Create Account
+                </Button>
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
     </motion.header>
