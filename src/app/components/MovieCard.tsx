@@ -93,7 +93,7 @@ export function MovieCard({ movie, onMovieClick }: MovieCardProps) {
 
       {/* Movie Info */}
       <div className="p-3">
-        <h3 className="truncate text-white">{movie.title}</h3>
+        <h3 className="truncate text-white font-classic text-lg font-medium movie-title">{movie.title}</h3>
         <div className="mt-1 flex items-center gap-2 text-sm text-zinc-400">
           <span>{movie.year}</span>
           <span>•</span>

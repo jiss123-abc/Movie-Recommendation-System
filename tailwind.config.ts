@@ -64,8 +64,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Crimson Text", "Times New Roman", "Times", "serif"],
+        serif: ["Libre Baskerville", "Georgia", "Times New Roman", "serif"],
+        classic: ["Cormorant Garamond", "Garamond", "Times New Roman", "serif"],
+        elegant: ["Libre Baskerville", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -127,14 +127,14 @@ function AppContent() {
     filters.ratingRange[1] !== 10;
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black font-sans">
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-zinc-800 bg-black/95 backdrop-blur">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Film className="h-8 w-8 text-red-600" />
-              <span className="text-white">CineMatch</span>
+              <span className="text-white font-elegant text-xl font-semibold tracking-wide">CineMatch</span>
             </div>
 
             {/* Search Bar */}
@@ -205,7 +205,7 @@ function AppContent() {
               <section>
                 <div className="mb-4 flex items-center gap-2">
                   <TrendingUp className="h-5 w-5 text-red-600" />
-                  <h2 className="text-white">Trending Now</h2>
+                  <h2 className="text-white font-elegant text-xl font-semibold">Trending Now</h2>
                 </div>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                   {trendingMovies.slice(0, 6).map((movie) => (
@@ -218,7 +218,7 @@ function AppContent() {
             {/* Recommended Section */}
             {!hasActiveSearch && !hasActiveFilters && recommendedMovies.length > 0 && (
               <section>
-                <h2 className="mb-4 text-white">Recommended for You</h2>
+                <h2 className="mb-4 text-white font-elegant text-xl font-semibold">Recommended for You</h2>
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                   {recommendedMovies.slice(0, 6).map((movie) => (
                     <MovieCard key={movie.id} movie={movie} onMovieClick={setSelectedMovie} />
@@ -272,7 +272,7 @@ function AppContent() {
 
           {/* Watchlist Tab */}
           <TabsContent value="watchlist" className="space-y-4">
-            <h2 className="text-white">My Watchlist</h2>
+            <h2 className="text-white font-elegant text-xl font-semibold">My Watchlist</h2>
             {watchlistMovies.length > 0 ? (
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {watchlistMovies.map((movie) => (
@@ -292,7 +292,7 @@ function AppContent() {
 
           {/* Watched Tab */}
           <TabsContent value="watched" className="space-y-4">
-            <h2 className="text-white">Watched Movies</h2>
+            <h2 className="text-white font-elegant text-xl font-semibold">Watched Movies</h2>
             {watchedMovies.length > 0 ? (
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {watchedMovies.map((movie) => (
@@ -312,7 +312,7 @@ function AppContent() {
 
           {/* History Tab */}
           <TabsContent value="history" className="space-y-4">
-            <h2 className="text-white">Recently Viewed</h2>
+            <h2 className="text-white font-elegant text-xl font-semibold">Recently Viewed</h2>
             {recentlyViewedMovies.length > 0 ? (
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {recentlyViewedMovies.map((movie) => (
